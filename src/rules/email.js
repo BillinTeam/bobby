@@ -2,4 +2,7 @@ import pattern from './pattern';
 
 const regexp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-export default (sample, expected) => expected === pattern(sample, regexp);
+export default (sample, expected) => {
+  if (typeof sample === 'undefined' || sample === null) return true;
+  return expected === pattern(sample, regexp);
+};

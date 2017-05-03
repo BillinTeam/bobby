@@ -1,7 +1,7 @@
 {
   "name": "bobby.js",
   "description": "A declarative way of validating complex javascript nested objects.",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "./lib/index.js",
   "homepage": "https://github.com/mediasmart/bobby#readme",
   "author": "Javi Jimenez Villar <hello@soyjavi.com> (http://soyjavi.com/)",
@@ -18,14 +18,10 @@
     "start": "npm run build & npm run terminal",
     "test": "npm run mocha",
     "build": "babel src --out-dir lib",
-    "terminal": "node index.js Ava, Do you know if tomorrow will rain in Chiang Mai?",
     "mocha": "mocha --recursive --compilers js:babel-register --require babel-polyfill",
     "lint:js": "eslint ./src/**/*.js"
   },
   "license": "MIT",
-  "dependencies": {
-    "moment": "2.13.0"
-  },
   "devDependencies": {
     "babel-cli": "^6.10.1",
     "babel-core": "^6.14.0",

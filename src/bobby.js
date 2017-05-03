@@ -11,8 +11,8 @@ export default (sample, schema) => {
 
     Object.keys(schemaField).forEach(rule => {
       const expected = schemaField[rule];
-      const pass = rules[rule] && rules[rule](value, expected);
-      if (pass !== true) errors.push({ field, rule, expected, value });
+      const pass = (rules[rule] && rules[rule](value, expected)) || rule === 'message';
+      if (pass !== true) errors.push({ field, rule, expected, value, message: schemaField.message });
     });
   });
 
